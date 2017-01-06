@@ -42,6 +42,9 @@ class DB:
         del self.db["books"][title]
         return None
 
+    def list_books(self):
+        return [self.db["books"][book_title(book)] for book in self.db["books"]]
+
 # BOOK DATA ABSTRACTIONS (represented as a python dictionary to ease json conversion)
 
 def book_make(title, author, details, links=[]):
